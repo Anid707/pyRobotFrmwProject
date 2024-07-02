@@ -1,0 +1,10 @@
+[ ERROR ] Error in file 'C:\Users\HP\PycharmProjects\pyRobotFrmwProject\TestCases\DBTest.robot' on line 3: Importing library 'DatabaseLibrary' failed: ModuleNotFoundError: No module named 'DatabaseLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\HP\AppData\Local\Programs\Python\Python312\Scripts\robot.exe
+  C:\Users\HP\AppData\Local\Programs\Python\Python312\python312.zip
+  C:\Users\HP\AppData\Local\Programs\Python\Python312\DLLs
+  C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib
+  C:\Users\HP\AppData\Local\Programs\Python\Python312
+  C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages

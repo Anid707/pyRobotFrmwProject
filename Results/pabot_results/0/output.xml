@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.0 on win32)" generated="2024-06-09T04:11:38.224933" rpa="false" schemaversion="5">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="DBTest" source="C:\Users\HP\PycharmProjects\pyRobotFrmwProject\TestCases\DBTest.robot">
+<kw name="Connect To Database" type="SETUP">
+<msg time="2024-06-09T04:11:38.470811" level="FAIL">No keyword with name 'Connect To Database' found.</msg>
+<arg>pymysql</arg>
+<arg>${DBName}</arg>
+<arg>${DBUser}</arg>
+<arg>${DBPass}</arg>
+<arg>${DBHost}</arg>
+<arg>${DBPort}</arg>
+<status status="FAIL" start="2024-06-09T04:11:38.470811" elapsed="0.000000">No keyword with name 'Connect To Database' found.</status>
+</kw>
+<test id="s1-s1-t1" name="Create Person table" line="17">
+<status status="FAIL" start="2024-06-09T04:11:38.472266" elapsed="0.000000">Parent suite setup failed:
+No keyword with name 'Connect To Database' found.</status>
+</test>
+<test id="s1-s1-t2" name="Insert Data into Person table" line="22">
+<status status="FAIL" start="2024-06-09T04:11:38.473699" elapsed="0.000000">Parent suite setup failed:
+No keyword with name 'Connect To Database' found.</status>
+</test>
+<test id="s1-s1-t3" name="Insert Data from SQL file into Person table" line="27">
+<status status="FAIL" start="2024-06-09T04:11:38.473699" elapsed="0.001007">Parent suite setup failed:
+No keyword with name 'Connect To Database' found.</status>
+</test>
+<test id="s1-s1-t4" name="Check David record present in Person table" line="32">
+<status status="FAIL" start="2024-06-09T04:11:38.474706" elapsed="0.000000">Parent suite setup failed:
+No keyword with name 'Connect To Database' found.</status>
+</test>
+<test id="s1-s1-t5" name="Check Jio record Not present in Person table" line="35">
+<status status="FAIL" start="2024-06-09T04:11:38.474706" elapsed="0.001178">Parent suite setup failed:
+No keyword with name 'Connect To Database' found.</status>
+</test>
+<test id="s1-s1-t6" name="Check Person table present in database" line="38">
+<status status="FAIL" start="2024-06-09T04:11:38.475884" elapsed="0.000000">Parent suite setup failed:
+No keyword with name 'Connect To Database' found.</status>
+</test>
+<test id="s1-s1-t7" name="Verify Row count is zero" line="41">
+<status status="FAIL" start="2024-06-09T04:11:38.475884" elapsed="0.001008">Parent suite setup failed:
+No keyword with name 'Connect To Database' found.</status>
+</test>
+<test id="s1-s1-t8" name="Verify Row count is equal to some value" line="44">
+<status status="FAIL" start="2024-06-09T04:11:38.476892" elapsed="0.000000">Parent suite setup failed:
+No keyword with name 'Connect To Database' found.</status>
+</test>
+<test id="s1-s1-t9" name="Verify Row count is less than some value" line="47">
+<status status="FAIL" start="2024-06-09T04:11:38.477942" elapsed="0.000000">Parent suite setup failed:
+No keyword with name 'Connect To Database' found.</status>
+</test>
+<test id="s1-s1-t10" name="Update record in Person table" line="50">
+<status status="FAIL" start="2024-06-09T04:11:38.477942" elapsed="0.001005">Parent suite setup failed:
+No keyword with name 'Connect To Database' found.</status>
+</test>
+<test id="s1-s1-t11" name="Retrieve records from Person table" line="55">
+<status status="FAIL" start="2024-06-09T04:11:38.478947" elapsed="0.000000">Parent suite setup failed:
+No keyword with name 'Connect To Database' found.</status>
+</test>
+<test id="s1-s1-t12" name="Delete records from Person table" line="59">
+<status status="FAIL" start="2024-06-09T04:11:38.479946" elapsed="0.000000">Parent suite setup failed:
+No keyword with name 'Connect To Database' found.</status>
+</test>
+<kw name="Disconnect From Database" type="TEARDOWN">
+<msg time="2024-06-09T04:11:38.484454" level="FAIL">No keyword with name 'Disconnect From Database' found.</msg>
+<status status="FAIL" start="2024-06-09T04:11:38.482946" elapsed="0.001508">No keyword with name 'Disconnect From Database' found.</status>
+</kw>
+<status status="FAIL" start="2024-06-09T04:11:38.257036" elapsed="0.227418">Suite setup failed:
+No keyword with name 'Connect To Database' found.
+
+Also suite teardown failed:
+No keyword with name 'Disconnect From Database' found.</status>
+</suite>
+<status status="FAIL" start="2024-06-09T04:11:38.238627" elapsed="0.246835"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="12" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="12" skip="0" id="s1" name="Suites">Suites</stat>
+<stat pass="0" fail="12" skip="0" id="s1-s1" name="DBTest">Suites.DBTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-06-09T04:11:38.458508" level="ERROR">Error in file 'C:\Users\HP\PycharmProjects\pyRobotFrmwProject\TestCases\DBTest.robot' on line 3: Importing library 'DatabaseLibrary' failed: ModuleNotFoundError: No module named 'DatabaseLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\HP\AppData\Local\Programs\Python\Python312\Scripts\robot.exe
+  C:\Users\HP\AppData\Local\Programs\Python\Python312\python312.zip
+  C:\Users\HP\AppData\Local\Programs\Python\Python312\DLLs
+  C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib
+  C:\Users\HP\AppData\Local\Programs\Python\Python312
+  C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages</msg>
+</errors>
+</robot>

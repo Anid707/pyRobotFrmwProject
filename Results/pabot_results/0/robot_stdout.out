@@ -1,0 +1,83 @@
+==============================================================================
+Suites                                                                        
+==============================================================================
+Suites.DBTest                                                                 
+==============================================================================
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\HP\PycharmProjects\pyRobotFrmwProject\TestCases\DBTest.robot:6
+      Connect To Database    pymysql    ${DBName}    ${DBUser}    ${DBPass}    ${DBHost}    ${DBPort}
+      |  ${DBName} = mydatabase-dev (str)
+      |  ${DBUser} = root (str)
+      |  ${DBPass} = SQL&root123 (str)
+      |  ${DBHost} = 127.0.0.1 (str)
+      |  ${DBPort} = 3306 (str)
+______________________________________________________________________________
+Create Person table                                                   | FAIL |
+Parent suite setup failed:
+No keyword with name 'Connect To Database' found.
+------------------------------------------------------------------------------
+Insert Data into Person table                                         | FAIL |
+Parent suite setup failed:
+No keyword with name 'Connect To Database' found.
+------------------------------------------------------------------------------
+Insert Data from SQL file into Person table                           | FAIL |
+Parent suite setup failed:
+No keyword with name 'Connect To Database' found.
+------------------------------------------------------------------------------
+Check David record present in Person table                            | FAIL |
+Parent suite setup failed:
+No keyword with name 'Connect To Database' found.
+------------------------------------------------------------------------------
+Check Jio record Not present in Person table                          | FAIL |
+Parent suite setup failed:
+No keyword with name 'Connect To Database' found.
+------------------------------------------------------------------------------
+Check Person table present in database                                | FAIL |
+Parent suite setup failed:
+No keyword with name 'Connect To Database' found.
+------------------------------------------------------------------------------
+Verify Row count is zero                                              | FAIL |
+Parent suite setup failed:
+No keyword with name 'Connect To Database' found.
+------------------------------------------------------------------------------
+Verify Row count is equal to some value                               | FAIL |
+Parent suite setup failed:
+No keyword with name 'Connect To Database' found.
+------------------------------------------------------------------------------
+Verify Row count is less than some value                              | FAIL |
+Parent suite setup failed:
+No keyword with name 'Connect To Database' found.
+------------------------------------------------------------------------------
+Update record in Person table                                         | FAIL |
+Parent suite setup failed:
+No keyword with name 'Connect To Database' found.
+------------------------------------------------------------------------------
+Retrieve records from Person table                                    | FAIL |
+Parent suite setup failed:
+No keyword with name 'Connect To Database' found.
+------------------------------------------------------------------------------
+Delete records from Person table                                      | FAIL |
+Parent suite setup failed:
+No keyword with name 'Connect To Database' found.
+------------------------------------------------------------------------------
+  
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\HP\PycharmProjects\pyRobotFrmwProject\TestCases\DBTest.robot:7
+      Disconnect From Database    
+______________________________________________________________________________
+Suites.DBTest                                                         | FAIL |
+Suite setup failed:
+No keyword with name 'Connect To Database' found.
+
+Also suite teardown failed:
+No keyword with name 'Disconnect From Database' found.
+
+12 tests, 0 passed, 12 failed
+==============================================================================
+Suites                                                                | FAIL |
+12 tests, 0 passed, 12 failed
+==============================================================================
+Output:  C:\Users\HP\PycharmProjects\pyRobotFrmwProject\Results\pabot_results\0\output.xml

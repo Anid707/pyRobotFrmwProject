@@ -1,0 +1,8 @@
+datasources:f23eac54a49b28c61eca40d9e2ae5cc533704643
+commandlineoptions:9f8598a690c7367accf83ead504756ddd374acc9
+suitesfrom:no-suites-from-option
+file:64e0e4afa529c73fbe6b0133144840ab99afb2bb
+--suite Suites.DBTest
+--suite Suites.DDT
+--suite Suites.DDT Excel
+--suite Suites.Dropdowns

@@ -1,0 +1,5 @@
+INSERT INTO mydatabase-dev.person values(102, "John", "Canady")
+INSERT INTO mydatabase-dev.person values(103, "David", "Pit")
+INSERT INTO mydatabase-dev.person values(104, "Smith", "Den")
+INSERT INTO mydatabase-dev.person values(105, "Marry", "Davidson")
+INSERT INTO mydatabase-dev.person values(106, "Nany", "Chease")

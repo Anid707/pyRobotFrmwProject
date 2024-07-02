@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.0 on win32)" generated="2024-06-09T02:59:13.325745" rpa="false" schemaversion="5">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="Dropdowns" source="C:\Users\HP\PycharmProjects\pyRobotFrmwProject\TestCases\Dropdowns.robot">
+<test id="s1-s1-t1" name="Hadling Dropdowns and Lists" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-06-09T02:59:13.487975" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-06-09T02:59:13.486975" elapsed="3.441241"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-06-09T02:59:16.928216" elapsed="0.038423"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>2seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-06-09T02:59:16.967797" elapsed="0.001005"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-06-09T02:59:16.970109" level="INFO">Clicking link 'xpath://a[@class='ico-register']'.</msg>
+<arg>xpath://a[@class='ico-register']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-09T02:59:16.968802" elapsed="7.572034"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-06-09T02:59:24.541346" level="INFO">Selecting options from selection list 'DateOfBirthDay' by label 10.</msg>
+<arg>DateOfBirthDay</arg>
+<arg>10</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-06-09T02:59:24.541346" elapsed="14.233542"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-06-09T02:59:38.775908" level="INFO">Selecting options from selection list 'DateOfBirthDay' by index 1.</msg>
+<arg>DateOfBirthDay</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-06-09T02:59:38.774888" elapsed="18.195662"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-06-09T02:59:56.971724" level="INFO">Selecting options from selection list 'DateOfBirthDay' by value 5.</msg>
+<arg>DateOfBirthDay</arg>
+<arg>5</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-06-09T02:59:56.970550" elapsed="14.137296"/>
+</kw>
+<status status="PASS" start="2024-06-09T02:59:13.486975" elapsed="57.620871"/>
+</test>
+<status status="PASS" start="2024-06-09T02:59:13.345980" elapsed="57.762913"/>
+</suite>
+<status status="PASS" start="2024-06-09T02:59:13.334367" elapsed="57.777705"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Suites">Suites</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Dropdowns">Suites.Dropdowns</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

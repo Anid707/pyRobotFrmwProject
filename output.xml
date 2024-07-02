@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.0 on win32)" generated="2024-06-09T22:08:12.413959" rpa="false" schemaversion="5">
+<suite id="s1" name="ApiTC1" source="C:\Users\HP\PycharmProjects\pyRobotFrmwProject\API\ApiTests\ApiTC1.robot">
+<test id="s1-t1" name="GET Request Test" line="13">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-09T22:08:12.857170" level="INFO">Creating Session using : alias=session1, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>session1</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-09T22:08:12.855721" elapsed="0.001449"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-09T22:08:12.857170" level="INFO">${endpoint} = /api/users?page=2</msg>
+<var>${endpoint}</var>
+<arg>/api/users?page=2</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-09T22:08:12.857170" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-06-09T22:08:15.331617" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-06-09T22:08:15.331617" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Sun, 09 Jun 2024 17:08:18 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1717713774&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=l3qhJaARI3jtVFcA70X677%2BLfjmddZ96E1rKxI%2FauB4%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1717713774&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=l3qhJaARI3jtVFcA70X677%2BLfjmddZ96E1rKxI%2FauB4%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '2560', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8912b91069403ccb-CDG', 'Content-Encoding': 'gzip'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg time="2024-06-09T22:08:15.331617" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>session1</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-09T22:08:12.857170" elapsed="2.474447"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>response.headers ${response.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.332895" elapsed="0.001725"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>response.status_code ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.334620" elapsed="0.002004"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>response.content ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.337789" elapsed="0.001458"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-09T22:08:15.341248" level="INFO">{"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}</msg>
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.340248" elapsed="0.001000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-06-09T22:08:15.343412" level="INFO">${status_code} = 200</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.342326" elapsed="0.001086"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.344487" elapsed="0.000000"/>
+</kw>
+<kw name="Convert String To Json" owner="JSONLibrary">
+<msg time="2024-06-09T22:08:15.347585" level="INFO">${json_response} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
+<var>${json_response}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<status status="PASS" start="2024-06-09T22:08:15.346578" elapsed="0.001007"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>json_response ${json_response}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.348449" elapsed="0.001221"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-06-09T22:08:15.393697" level="INFO">${contents} = [2]</msg>
+<var>${contents}</var>
+<arg>${json_response}</arg>
+<arg>${page_path}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-06-09T22:08:15.349670" elapsed="0.044027"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>contents ${contents}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.395099" elapsed="0.000483"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-06-09T22:08:15.396540" level="INFO">${contents} = [2]</msg>
+<var>${contents}</var>
+<arg>${contents}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.396540" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>contents ${contents}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.397727" elapsed="0.001080"/>
+</kw>
+<kw name="Remove String Using Regexp" owner="String">
+<msg time="2024-06-09T22:08:15.399984" level="INFO">${contents} = 2</msg>
+<var>${contents}</var>
+<arg>${contents}</arg>
+<arg>['\\[\\],]</arg>
+<doc>Removes ``patterns`` from the given ``string``.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.399471" elapsed="0.000513"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>contents ${contents}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.400990" elapsed="0.000654"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${contents}</arg>
+<arg>2</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.402774" elapsed="0.000510"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-06-09T22:08:15.405046" level="INFO">${header_value} = application/json; charset=utf-8</msg>
+<var>${header_value}</var>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.404036" elapsed="0.001010"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${header_value}</arg>
+<arg>application/json; charset=utf-8</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.406023" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.cookies}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-09T22:08:15.407188" elapsed="0.001408"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-06-09T22:08:15.410356" level="FAIL">Dictionary does not contain key '__cfduid'.</msg>
+<var>${cookie_value}</var>
+<arg>${response.cookies}</arg>
+<arg>__cfduid</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="FAIL" start="2024-06-09T22:08:15.409346" elapsed="0.004253">Dictionary does not contain key '__cfduid'.</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${cookie_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-06-09T22:08:15.414612" elapsed="0.000000"/>
+</kw>
+<tag>API</tag>
+<status status="FAIL" start="2024-06-09T22:08:12.855721" elapsed="2.560371">Dictionary does not contain key '__cfduid'.</status>
+</test>
+<doc>Robot Framework API Test</doc>
+<status status="FAIL" start="2024-06-09T22:08:12.414959" elapsed="3.003216"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">API</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="ApiTC1">ApiTC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

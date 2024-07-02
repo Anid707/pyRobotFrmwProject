@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.0 on win32)" generated="2024-06-13T20:31:51.107740" rpa="false" schemaversion="5">
+<suite id="s1" name="ApiTests" source="C:\Users\HP\PycharmProjects\pyRobotFrmwProject\API\ApiTests">
+<suite id="s1-s1" name="ApiTC1" source="C:\Users\HP\PycharmProjects\pyRobotFrmwProject\API\ApiTests\ApiTC1.robot">
+<test id="s1-s1-t1" name="GET Request Test" line="13">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T20:31:51.349045" level="INFO">Creating Session using : alias=session1, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>session1</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T20:31:51.349045" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T20:31:51.350049" level="INFO">${endpoint} = /api/users?page=2</msg>
+<var>${endpoint}</var>
+<arg>/api/users?page=2</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.350049" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T20:31:51.517594" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-06-13T20:31:51.518607" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 13 Jun 2024 15:31:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1718026877&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=Tu0qx4kf%2F9t0sY%2BL%2FVtB56Va0rQKNIOv2zc6%2BDlckGY%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1718026877&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=Tu0qx4kf%2F9t0sY%2BL%2FVtB56Va0rQKNIOv2zc6%2BDlckGY%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '15', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8933216abea6bcbe-ALA', 'Content-Encoding': 'gzip'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg time="2024-06-13T20:31:51.518607" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>session1</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.350049" elapsed="0.169068"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>response.headers ${response.headers}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.519117" elapsed="0.003171"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>response.status_code ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.523286" elapsed="0.005977"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>response.content ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.529263" elapsed="0.001993"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-13T20:31:51.533249" level="INFO">{"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}</msg>
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.531256" elapsed="0.001993"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-06-13T20:31:51.535247" level="INFO">${status_code} = 200</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.534245" elapsed="0.001002"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.535247" elapsed="0.001038"/>
+</kw>
+<kw name="Convert String To Json" owner="JSONLibrary">
+<msg time="2024-06-13T20:31:51.539787" level="INFO">${json_response} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
+<var>${json_response}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<status status="PASS" start="2024-06-13T20:31:51.536790" elapsed="0.002997"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>json_response ${json_response}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.539787" elapsed="0.001939"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-06-13T20:31:51.572031" level="INFO">${contents} = [2]</msg>
+<var>${contents}</var>
+<arg>${json_response}</arg>
+<arg>${page_path}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-06-13T20:31:51.542047" elapsed="0.029984"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>contents ${contents}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.573044" elapsed="0.001002"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-06-13T20:31:51.574046" level="INFO">${contents} = [2]</msg>
+<var>${contents}</var>
+<arg>${contents}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.574046" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>contents ${contents}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.575215" elapsed="0.000179"/>
+</kw>
+<kw name="Remove String Using Regexp" owner="String">
+<msg time="2024-06-13T20:31:51.576399" level="INFO">${contents} = 2</msg>
+<var>${contents}</var>
+<arg>${contents}</arg>
+<arg>['\\[\\],]</arg>
+<doc>Removes ``patterns`` from the given ``string``.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.576399" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>contents ${contents}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.577393" elapsed="0.001270"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${contents}</arg>
+<arg>2</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.578663" elapsed="0.001285"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-06-13T20:31:51.581683" level="INFO">${header_value} = application/json; charset=utf-8</msg>
+<var>${header_value}</var>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.580674" elapsed="0.001009"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${header_value}</arg>
+<arg>application/json; charset=utf-8</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.582730" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.cookies}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.583966" elapsed="0.001380"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-06-13T20:31:51.587346" level="FAIL">Dictionary does not contain key '__stripe_mid'.</msg>
+<var>${cookie_value}</var>
+<arg>${response.cookies}</arg>
+<arg>__stripe_mid</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="FAIL" start="2024-06-13T20:31:51.586350" elapsed="0.001993">Dictionary does not contain key '__stripe_mid'.</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${cookie_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-06-13T20:31:51.589640" elapsed="0.000000"/>
+</kw>
+<tag>API</tag>
+<status status="FAIL" start="2024-06-13T20:31:51.348033" elapsed="0.241607">Dictionary does not contain key '__stripe_mid'.</status>
+</test>
+<doc>Robot Framework API Test</doc>
+<status status="FAIL" start="2024-06-13T20:31:51.144757" elapsed="0.447620"/>
+</suite>
+<suite id="s1-s2" name="ApiTC2" source="C:\Users\HP\PycharmProjects\pyRobotFrmwProject\API\ApiTests\ApiTC2.robot">
+<test id="s1-s2-t1" name="POST Request Test" line="14">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T20:31:51.607807" level="INFO">Creating Session using : alias=session1, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>session1</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T20:31:51.607807" elapsed="0.001002"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T20:31:51.609838" level="INFO">${endpoint} = /api/users</msg>
+<var>${endpoint}</var>
+<arg>/api/users</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.609838" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T20:31:51.610843" level="INFO">${body} = {'name': 'Rohit', 'job': 'Software Engineer'}</msg>
+<var>${body}</var>
+<arg>name=Rohit</arg>
+<arg>job=Software Engineer</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.609838" elapsed="0.001005"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T20:31:52.044805" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '32', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=name=Rohit&amp;job=Software+Engineer 
+ </msg>
+<msg time="2024-06-13T20:31:52.044805" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Thu, 13 Jun 2024 15:31:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '92', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1718292717&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=YX1a0cfjp3Ydeqg4emYPkHbYZSL8mFScENlsjRil%2F1Y%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1718292717&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=YX1a0cfjp3Ydeqg4emYPkHbYZSL8mFScENlsjRil%2F1Y%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"5c-19akfTAvs7PcVfIfvySnMDwdxjo"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '8933216c9f64bca6-ALA'} 
+ body={"name":"Rohit","job":"Software Engineer","id":"211","createdAt":"2024-06-13T15:31:57.727Z"} 
+ </msg>
+<msg time="2024-06-13T20:31:52.045809" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>session1</arg>
+<arg>${endpoint}</arg>
+<arg>data=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T20:31:51.611801" elapsed="0.434008"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.045809" elapsed="0.002019"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.049023" elapsed="0.001004"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-06-13T20:31:52.053016" level="INFO">${status_code} = 201</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.051023" elapsed="0.001993"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>201</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.054029" elapsed="0.001188"/>
+</kw>
+<kw name="Convert String To Json" owner="JSONLibrary">
+<msg time="2024-06-13T20:31:52.056219" level="INFO">${json_response} = {'name': 'Rohit', 'job': 'Software Engineer', 'id': '211', 'createdAt': '2024-06-13T15:31:57.727Z'}</msg>
+<var>${json_response}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<status status="PASS" start="2024-06-13T20:31:52.055217" elapsed="0.001002"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-06-13T20:31:52.104659" level="INFO">${contents} = ['211']</msg>
+<var>${contents}</var>
+<arg>${json_response}</arg>
+<arg>${id_path}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-06-13T20:31:52.057440" elapsed="0.047219"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2024-06-13T20:31:52.106387" level="INFO">Length is 1.</msg>
+<arg>${contents}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.106387" elapsed="0.000000"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" start="2024-06-13T20:31:51.606667" elapsed="0.501234"/>
+</test>
+<doc>Robot Framework API Test</doc>
+<status status="PASS" start="2024-06-13T20:31:51.594765" elapsed="0.515576"/>
+</suite>
+<suite id="s1-s3" name="ApiTC3" source="C:\Users\HP\PycharmProjects\pyRobotFrmwProject\API\ApiTests\ApiTC3.robot">
+<test id="s1-s3-t1" name="PUT Request Test" line="15">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T20:31:52.124519" level="INFO">Creating Session using : alias=session1, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>session1</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T20:31:52.124519" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T20:31:52.125556" level="INFO">${endpoint} = /api/users/122</msg>
+<var>${endpoint}</var>
+<arg>/api/users/122</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.125556" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-13T20:31:52.127935" level="INFO">${body} = {'name': 'Virat', 'job': 'Data Engineer'}</msg>
+<var>${body}</var>
+<arg>name=Virat</arg>
+<arg>job=Data Engineer</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.126768" elapsed="0.001167"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T20:31:52.578006" level="INFO">PUT Request : url=https://reqres.in/api/users/122 
+ path_url=/api/users/122 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '28', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=name=Virat&amp;job=Data+Engineer 
+ </msg>
+<msg time="2024-06-13T20:31:52.578006" level="INFO">PUT Response : url=https://reqres.in/api/users/122 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 13 Jun 2024 15:31:58 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1718292718&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=jLRkjbx%2Bq9VYkRWJs2RTGL0%2FPIuRuUavF9BSi6yhoZo%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1718292718&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=jLRkjbx%2Bq9VYkRWJs2RTGL0%2FPIuRuUavF9BSi6yhoZo%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4d-zGi3+1B6Bg75UVFYDO6v2Grb0xM"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8933216fbf7bbcab-ALA', 'Content-Encoding': 'gzip'} 
+ body={"name":"Virat","job":"Data Engineer","updatedAt":"2024-06-13T15:31:58.251Z"} 
+ </msg>
+<msg time="2024-06-13T20:31:52.578006" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>session1</arg>
+<arg>${endpoint}</arg>
+<arg>data=${body}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.127935" elapsed="0.450071"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.579017" elapsed="0.002011"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.582026" elapsed="0.001003"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-06-13T20:31:52.586151" level="INFO">${status_code} = 200</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.584017" elapsed="0.002134"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.586657" elapsed="0.000000"/>
+</kw>
+<kw name="Convert String To Json" owner="JSONLibrary">
+<msg time="2024-06-13T20:31:52.588199" level="INFO">${json_response} = {'name': 'Virat', 'job': 'Data Engineer', 'updatedAt': '2024-06-13T15:31:58.251Z'}</msg>
+<var>${json_response}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<status status="PASS" start="2024-06-13T20:31:52.587690" elapsed="0.000509"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-06-13T20:31:52.662036" level="INFO">${contents} = ['Virat']</msg>
+<var>${contents}</var>
+<arg>${json_response}</arg>
+<arg>${name_path}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-06-13T20:31:52.589507" elapsed="0.072529"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-06-13T20:31:52.663111" level="INFO">${contents} = ['Virat']</msg>
+<var>${contents}</var>
+<arg>${contents}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.663111" elapsed="0.001094"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>contents ${contents}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.664205" elapsed="0.000000"/>
+</kw>
+<kw name="Remove String Using Regexp" owner="String">
+<msg time="2024-06-13T20:31:52.665514" level="INFO">${contents} = Virat</msg>
+<var>${contents}</var>
+<arg>${contents}</arg>
+<arg>['\\[\\]']</arg>
+<doc>Removes ``patterns`` from the given ``string``.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.665514" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>contents ${contents}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.666859" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${contents}</arg>
+<arg>Virat</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.667852" elapsed="0.000000"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" start="2024-06-13T20:31:52.123479" elapsed="0.544373"/>
+</test>
+<doc>Robot Framework API Test</doc>
+<status status="PASS" start="2024-06-13T20:31:52.112889" elapsed="0.557761"/>
+</suite>
+<suite id="s1-s4" name="ApiTC4" source="C:\Users\HP\PycharmProjects\pyRobotFrmwProject\API\ApiTests\ApiTC4.robot">
+<test id="s1-s4-t1" name="Delete Request Test" line="12">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T20:31:52.686533" level="INFO">Creating Session using : alias=session1, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>session1</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T20:31:52.686533" elapsed="0.001003"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T20:31:52.688357" level="INFO">${endpoint} = /api/users/122</msg>
+<var>${endpoint}</var>
+<arg>/api/users/122</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.688357" elapsed="0.000000"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T20:31:53.110061" level="INFO">DELETE Request : url=https://reqres.in/api/users/122 
+ path_url=/api/users/122 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-06-13T20:31:53.110061" level="INFO">DELETE Response : url=https://reqres.in/api/users/122 
+ status=204, reason=No Content 
+ headers={'Date': 'Thu, 13 Jun 2024 15:31:58 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1718292718&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=jLRkjbx%2Bq9VYkRWJs2RTGL0%2FPIuRuUavF9BSi6yhoZo%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1718292718&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=jLRkjbx%2Bq9VYkRWJs2RTGL0%2FPIuRuUavF9BSi6yhoZo%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '8933217338f1bcb2-ALA'} 
+ body=None 
+ </msg>
+<msg time="2024-06-13T20:31:53.110572" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<var>${response}</var>
+<arg>session1</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-13T20:31:52.689642" elapsed="0.420930"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:53.110572" elapsed="0.001216"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-06-13T20:31:53.112793" elapsed="0.001993"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-06-13T20:31:53.117309" level="INFO">${status_code} = 204</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-06-13T20:31:53.115784" elapsed="0.001525"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>204</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-06-13T20:31:53.117309" elapsed="0.001004"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" start="2024-06-13T20:31:52.685764" elapsed="0.432549"/>
+</test>
+<test id="s1-s4-t2" name="GET By Id Request Test" line="24">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-13T20:31:53.123420" level="INFO">Creating Session using : alias=session1, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>session1</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-13T20:31:53.122422" elapsed="0.000998"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-13T20:31:53.125496" level="INFO">${endpoint} = /api/users/122</msg>
+<var>${endpoint}</var>
+<arg>/api/users/122</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-13T20:31:53.124468" elapsed="0.001028"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-06-13T20:31:53.285466" level="INFO">GET Request : url=https://reqres.in/api/users/122 
+ path_url=/api/users/122 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-06-13T20:31:53.285466" level="INFO">GET Response : url=https://reqres.in/api/users/122 
+ status=404, reason=Not Found 
+ headers={'Date': 'Thu, 13 Jun 2024 15:31:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1718292704&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=ZWFbmo4xpAdda9r0jUS9%2BvrCutJBuJ5Ip4%2BQ4AcCN6w%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1718292704&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=ZWFbmo4xpAdda9r0jUS9%2BvrCutJBuJ5Ip4%2BQ4AcCN6w%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '15', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '89332175e8a9bcbb-ALA'} 
+ body={} 
+ </msg>
+<msg time="2024-06-13T20:31:53.285466" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://reqres.in/api/users/122</msg>
+<var>${response}</var>
+<arg>session1</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2024-06-13T20:31:53.125496" elapsed="0.163331">HTTPError: 404 Client Error: Not Found for url: https://reqres.in/api/users/122</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>response.status_code ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-06-13T20:31:53.290036" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>response.content ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-06-13T20:31:53.290036" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2024-06-13T20:31:53.291259" elapsed="0.000000"/>
+</kw>
+<tag>API</tag>
+<status status="FAIL" start="2024-06-13T20:31:53.121425" elapsed="0.169834">HTTPError: 404 Client Error: Not Found for url: https://reqres.in/api/users/122</status>
+</test>
+<doc>Robot Framework API Test</doc>
+<status status="FAIL" start="2024-06-13T20:31:52.672799" elapsed="0.620586"/>
+</suite>
+<status status="FAIL" start="2024-06-13T20:31:51.111190" elapsed="2.183692"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="2" skip="0">API</stat>
+</tag>
+<suite>
+<stat pass="3" fail="2" skip="0" id="s1" name="ApiTests">ApiTests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="ApiTC1">ApiTests.ApiTC1</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="ApiTC2">ApiTests.ApiTC2</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="ApiTC3">ApiTests.ApiTC3</stat>
+<stat pass="1" fail="1" skip="0" id="s1-s4" name="ApiTC4">ApiTests.ApiTC4</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

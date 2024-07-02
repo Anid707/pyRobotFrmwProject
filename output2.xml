@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.0 on win32)" generated="2024-06-09T21:58:42.387152" rpa="false" schemaversion="5">
+<suite id="s1" name="ApiTC4" source="C:\Users\HP\PycharmProjects\pyRobotFrmwProject\API\ApiTests\ApiTC4.robot">
+<test id="s1-t1" name="GET By Id Request Test" line="24">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-09T21:58:42.839564" level="INFO">Creating Session using : alias=session1, url=https://reqres.in/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>session1</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-09T21:58:42.838325" elapsed="0.001239"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-09T21:58:42.839564" level="INFO">${endpoint} = /api/users/122</msg>
+<var>${endpoint}</var>
+<arg>/api/users/122</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-09T21:58:42.839564" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-06-09T21:58:44.142668" level="INFO">GET Request : url=https://reqres.in/api/users/122 
+ path_url=/api/users/122 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-06-09T21:58:44.142668" level="INFO">GET Response : url=https://reqres.in/api/users/122 
+ status=404, reason=Not Found 
+ headers={'Date': 'Sun, 09 Jun 2024 16:58:48 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1717952328&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=qzR0cZNlgseufVaHPSU5IJSgpajnwVEK0yfNz4i%2B05M%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1717952328&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=qzR0cZNlgseufVaHPSU5IJSgpajnwVEK0yfNz4i%2B05M%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'EXPIRED', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8912ab22bef7022f-CDG'} 
+ body={} 
+ </msg>
+<msg time="2024-06-09T21:58:44.142668" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://reqres.in/api/users/122</msg>
+<var>${response}</var>
+<arg>session1</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2024-06-09T21:58:42.839564" elapsed="1.305675">HTTPError: 404 Client Error: Not Found for url: https://reqres.in/api/users/122</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>response.status_code ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-06-09T21:58:44.146412" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>response.content ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-06-09T21:58:44.146412" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2024-06-09T21:58:44.146412" elapsed="0.000000"/>
+</kw>
+<tag>API</tag>
+<status status="FAIL" start="2024-06-09T21:58:42.838325" elapsed="1.309320">HTTPError: 404 Client Error: Not Found for url: https://reqres.in/api/users/122</status>
+</test>
+<doc>Robot Framework API Test</doc>
+<status status="FAIL" start="2024-06-09T21:58:42.390152" elapsed="1.763780"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">API</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="ApiTC4">ApiTC4</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
